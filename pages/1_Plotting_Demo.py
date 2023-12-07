@@ -43,7 +43,7 @@ def plotting_demo():
 
 
 st.set_page_config(page_title="Pay vs Factor Graphs", page_icon="📈")
-st.markdown("# Pay vs Factor Graphs
+st.markdown("# Pay vs Factor Graphs")
 st.sidebar.header("Pay vs Factor Graphs")
 st.write(
     """This graph shows distribution of employee pay in New York City"""
