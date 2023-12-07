@@ -42,9 +42,9 @@ def plotting_demo():
     st.button("Re-run")
 
 
-st.set_page_config(page_title="Plotting Demo", page_icon="📈")
-st.markdown("# Plotting Demo")
-st.sidebar.header("Plotting Demo")
+st.set_page_config(page_title="Pay vs Factor Graphs", page_icon="📈")
+st.markdown("# Pay vs Factor Graphs
+st.sidebar.header("Pay vs Factor Graphs")
 st.write(
     """This graph shows distribution of employee pay in New York City"""
 )
