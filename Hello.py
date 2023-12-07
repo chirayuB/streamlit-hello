@@ -24,7 +24,7 @@ def run():
         page_icon="👋",
     )
 
-    st.write("# Welcome to Streamlit! 👋")
+    st.write("# New York City Municipal Employee Pay Data Analysis 👋")
 
     st.sidebar.success("Select a demo above.")
 
