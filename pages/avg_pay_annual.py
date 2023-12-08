@@ -31,7 +31,7 @@ def money_and_inflation_chart():
     st.line_chart(df_inflation.set_index('Fiscal Year'))
 
     # Chart - Line Chart for % Change in Salary
-    st.line_chart(df_money_paid[['Fiscal Year', '% Change in Salary']].set_index('Fiscal Year'))
+    st.altair_chart(df_money_paid[['Fiscal Year', '% Change in Salary']].set_index('Fiscal Year'))
 
 def main():
     st.set_page_config(page_title="Data Visualization Pages", page_icon="📊")
