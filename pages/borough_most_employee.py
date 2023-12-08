@@ -29,10 +29,12 @@ def plotting_demo(data, title):
     st.markdown(f"# {title}")
     st.write(f"This graph shows distribution for {title}")
     st.button("Re-run")
-show_code(plotting_demo)
+
 
     # Page 5: Borough with the Most Employees
     st.set_page_config(page_title="Borough with Most Employees", page_icon="🏙️")
     st.markdown("# Borough with Most Employees")
     st.sidebar.header("Borough with Most Employees")
     plotting_demo(load_data("path/to/your/borough_most_employees_data.csv"), "Borough with the Most Employees")
+
+show_code(plotting_demo)
