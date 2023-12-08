@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 def money_paid_chart():
-    st.sidebar.info("This page shows a dynamic chart representing Total Money Paid and Inflation over Fiscal Years.")
+    st.sidebar.info("This page shows dynamic charts representing Total Money Paid and Inflation over Fiscal Years.")
     st.sidebar.warning("Note: The data is for demonstration purposes only.")
 
     # Data Table for Total Money Paid
@@ -21,11 +21,11 @@ def money_paid_chart():
 
     df_inflation = pd.DataFrame(data_inflation)
 
-    # Merge DataFrames on Fiscal Year
-    df_combined = pd.merge(df_salary, df_inflation, on='Fiscal Year')
+    # Line Chart for Inflation
+    st.line_chart(df_inflation.set_index('Fiscal Year'))
 
-    # Bar Chart
-    st.bar_chart(df_combined.set_index('Fiscal Year'))
+    # Bar Chart for Total Money Paid
+    st.bar_chart(df_salary.set_index('Fiscal Year'))
 
 def main():
     st.set_page_config(page_title="Data Visualization Pages", page_icon="📊")
