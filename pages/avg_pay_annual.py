@@ -1,24 +1,6 @@
 import streamlit as st
 import pandas as pd
 
-def plotting_demo():
-    progress_bar = st.sidebar.progress(0)
-    status_text = st.sidebar.empty()
-    last_rows = np.random.randn(1, 1)
-    chart = st.line_chart(last_rows)
-
-    for i in range(1, 101):
-        new_rows = last_rows[-1, :] + np.random.randn(5, 1).cumsum(axis=0)
-        status_text.text("%i%% Complete" % i)
-        chart.add_rows(new_rows)
-        progress_bar.progress(i)
-        last_rows = new_rows
-        time.sleep(0.05)
-
-    progress_bar.empty()
-
-    st.button("Re-run")
-
 def money_paid_chart():
     st.sidebar.info("This page shows a dynamic chart representing Total Money Paid over Fiscal Years.")
     st.sidebar.warning("Note: The data is for demonstration purposes only.")
@@ -32,4 +14,17 @@ def money_paid_chart():
     df = pd.DataFrame(data)
 
     # Chart
-    st.line_chart(df.
+    st.line_chart(df.set_index('Fiscal Year'))
+
+def main():
+    st.set_page_config(page_title="Data Visualization Pages", page_icon="📊")
+
+    st.sidebar.title("Navigation")
+    selected_page = st.sidebar.selectbox("Select a page", ["Total Money Paid Chart"])
+
+    if selected_page == "Total Money Paid Chart":
+        st.markdown("# Total Money Paid Chart")
+        money_paid_chart()
+
+if __name__ == "__main__":
+    main()
