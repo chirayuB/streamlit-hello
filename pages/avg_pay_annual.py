@@ -14,7 +14,7 @@ def money_paid_chart():
     df = pd.DataFrame(data)
 
     # Chart
-    st.line_chart(df.set_index('Fiscal Year'))
+    st.bar_chart(df.set_index('Fiscal Year'))
 
 def main():
     st.set_page_config(page_title="Data Visualization Pages", page_icon="📊")
