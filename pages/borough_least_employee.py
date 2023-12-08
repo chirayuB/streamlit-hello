@@ -35,5 +35,6 @@ def plotting_demo(data, title):
     st.markdown("# Borough with Least Employees")
     st.sidebar.header("Borough with Least Employees")
     plotting_demo(load_data("path/to/your/borough_least_employees_data.csv"), "Borough with the Least Employees")
+show_code(plotting_demo)
 
 
