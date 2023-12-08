@@ -16,19 +16,8 @@ def run():
 
     st.markdown(
         """
-        Streamlit is an open-source app framework built specifically for
-        Machine Learning and Data Science projects.
-        **👈 Select a demo from the sidebar** to see some examples
-        of what Streamlit can do!
-        ### Want to learn more?
-        - Check out [streamlit.io](https://streamlit.io)
-        - Jump into our [documentation](https://docs.streamlit.io)
-        - Ask a question in our [community
-          forums](https://discuss.streamlit.io)
-        ### See more complex demos
-        - Use a neural net to [analyze the Udacity Self-driving Car Image
-          Dataset](https://github.com/streamlit/demo-self-driving)
-        - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
+       This project proposal aims to conduct an in-depth analysis of the New York City Municipal Employee Pay Data to provide valuable insights into how the city's budget is allocated towards employee salaries and overtime pay. The data is collected and maintained within the City's Personnel Management System (“PMS”) by various user agencies, and it has become increasingly essential due to public interest in fiscal transparency and accountability.
+
     """
     )
 
