@@ -1,5 +1,3 @@
-import time
-import numpy as np
 import streamlit as st
 import pandas as pd
 
@@ -34,22 +32,4 @@ def money_paid_chart():
     df = pd.DataFrame(data)
 
     # Chart
-    st.line_chart(df.set_index('Fiscal Year'))
-
-def main():
-    st.set_page_config(page_title="Data Visualization Pages", page_icon="📊")
-
-    st.sidebar.title("Navigation")
-    selected_page = st.sidebar.selectbox("Select a page", ["Line Chart Demo", "Total Money Paid Chart"])
-
-    if selected_page == "Line Chart Demo":
-        st.markdown("# Line Chart Demo")
-        st.write("This page shows a dynamic line chart.")
-        plotting_demo()
-
-    elif selected_page == "Total Money Paid Chart":
-        st.markdown("# Total Money Paid Chart")
-        money_paid_chart()
-
-if __name__ == "__main__":
-    main()
+    st.line_chart(df.
