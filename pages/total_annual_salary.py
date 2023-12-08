@@ -36,3 +36,4 @@ def plotting_demo(data, title):
     st.markdown("# Total Salaries Annually")
     st.sidebar.header("Total Salaries Annually")
     plotting_demo(load_data("path/to/your/total_salaries_annual_data.csv"), "Total Employee Salaries Annually")
+show_code(plotting_demo)
