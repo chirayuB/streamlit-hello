@@ -24,6 +24,9 @@ def money_and_inflation_chart():
     # Calculate % Change in Salary
     df_money_paid['% Change in Salary'] = df_money_paid['Total Money Paid (in Billions)'].pct_change() * 100
 
+    # Replace NaN values with 0
+    df_money_paid = df_money_paid.fillna(0)
+
     # Chart - Bar Chart for Total Money Paid
     st.bar_chart(df_money_paid.set_index('Fiscal Year'))
 
@@ -31,7 +34,7 @@ def money_and_inflation_chart():
     st.line_chart(df_inflation.set_index('Fiscal Year'))
 
     # Chart - Line Chart for % Change in Salary
-    st.altair_chart(df_money_paid[['Fiscal Year', '% Change in Salary']].set_index('Fiscal Year'))
+    st.line_chart(df_money_paid[['Fiscal Year', '% Change in Salary']].set_index('Fiscal Year'))
 
 def main():
     st.set_page_config(page_title="Data Visualization Pages", page_icon="📊")
