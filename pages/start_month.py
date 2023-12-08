@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import altair as alt
 
 def start_month_chart():
     st.sidebar.info("This page shows a dynamic chart representing the number of employees who started working by month.")
@@ -13,15 +14,16 @@ def start_month_chart():
 
     df_start_month = pd.DataFrame(data_start_month)
 
-    # Convert 'Start Month' to categorical with custom order
-    months_order = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-    df_start_month['Start Month'] = pd.Categorical(df_start_month['Start Month'], categories=months_order, ordered=True)
-
-    # Sort DataFrame by the custom order of months
-    df_start_month = df_start_month.sort_values(by='Start Month')
-
     # Chart - Bar Chart for Number of Employees by Start Month
-    st.bar_chart(df_start_month.set_index('Start Month'))
+    chart = alt.Chart(df_start_month).mark_bar().encode(
+        x=alt.X('Start Month:N', sort=['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']),
+        y='Count:Q'
+    ).properties(
+        width=600,
+        height=400
+    )
+
+    st.altair_chart(chart)
 
 def main():
     st.set_page_config(page_title="Data Visualization Pages", page_icon="📊")
