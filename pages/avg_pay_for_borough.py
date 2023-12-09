@@ -2,6 +2,7 @@ import time
 import numpy as np
 import pandas as pd
 import streamlit as st
+import altair as alt
 from streamlit.hello.utils import show_code
 
 # Placeholder function for data loading
@@ -30,10 +31,22 @@ def plotting_demo(data, title):
         st.warning(f"No data available for {title}")
         return
 
-    st.line_chart(data.set_index(['Fiscal Year', 'Work Location Borough']).unstack())
+    chart = (
+        alt.Chart(data)
+        .mark_line()
+        .encode(
+            x='Fiscal Year:O',
+            y='avg_salary:Q',
+            color='Work Location Borough:N'
+        )
+        .properties(
+            title=f"{title}",
+            width=600,
+            height=400
+        )
+    )
 
-    st.markdown(f"# {title}")
-    st.write(f"This line chart shows the average salary for each borough over the years.")
+    st.altair_chart(chart, use_container_width=True)
     st.button("Re-run")
 
 # Page: Average Salary by Borough
