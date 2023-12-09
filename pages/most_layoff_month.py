@@ -26,8 +26,8 @@ def plotting_demo(data, title):
     st.write(f"This bar chart shows the number of people left each fiscal year.")
     st.button("Re-run")
 
-# Page 9: Year-wise Trends
-st.set_page_config(page_title="Year-wise Trends", page_icon="📊")
-st.markdown("# Year-wise Trends")
-st.sidebar.header("Year-wise Trends")
-plotting_demo(load_data("path/to/your/year_wise_trends_data.csv"), "Year-wise Trends")
+# Page 8: Borough-based Insights
+st.set_page_config(page_title="Borough-based Insights", page_icon="🏙️")
+st.markdown("# Borough-based Insights")
+st.sidebar.header("Borough-based Insights")
+plotting_demo(load_data("path/to/your/borough_based_insights_data.csv"), "Selected Boroughs Insights")
