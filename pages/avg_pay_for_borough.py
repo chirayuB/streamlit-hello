@@ -30,7 +30,7 @@ def plotting_demo(data, title):
         st.warning(f"No data available for {title}")
         return
 
-    st.line_chart(data.set_index(['Fiscal Year', 'Work Location Borough']))
+    st.line_chart(data.set_index(['Fiscal Year', 'Work Location Borough']).unstack())
 
     st.markdown(f"# {title}")
     st.write(f"This line chart shows the average salary for each borough over the years.")
