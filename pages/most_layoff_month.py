@@ -21,7 +21,6 @@ def plotting_demo(data, title):
         return
 
     st.bar_chart(data.set_index('Fiscal Year'))
-
     st.markdown(f"# {title}")
     st.write(f"This bar chart shows the number of people left each fiscal year.")
     st.button("Re-run")
@@ -31,3 +30,4 @@ st.set_page_config(page_title="Borough-based Insights", page_icon="🏙️")
 st.markdown("# Borough-based Insights")
 st.sidebar.header("Borough-based Insights")
 plotting_demo(load_data("path/to/your/borough_based_insights_data.csv"), "Selected Boroughs Insights")
+
