@@ -23,7 +23,7 @@ def plotting_demo(data, title):
     st.bar_chart(data.set_index('Title Description'))
 
     st.markdown(f"# {title}")
-    st.write(f"This bar chart shows the total OT hours for jobs with the highest totals.")
+    st.write(f"This bar chart shows the total OT hours for jobs (y-axis) with the highest totals and also has the job names (x-axis).")
     st.button("Re-run")
 
 # Page: Overtime Analysis
