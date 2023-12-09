@@ -1,9 +1,4 @@
-import time
-import numpy as np
-import pandas as pd
 import streamlit as st
-import altair as alt
-from streamlit.hello.utils import show_code
 
 # Placeholder function for data loading
 def load_data(file_path):
@@ -31,22 +26,14 @@ def plotting_demo(data, title):
         st.warning(f"No data available for {title}")
         return
 
-    chart = (
-        alt.Chart(data)
-        .mark_line()
-        .encode(
-            x='Fiscal Year:O',
-            y='avg_salary:Q',
-            color='Work Location Borough:N'
-        )
-        .properties(
-            title=f"{title}",
-            width=600,
-            height=400
-        )
-    )
+    # Insert code to generate your chart image and save it
+    # For now, we'll use a placeholder URL
+    chart_image_url = "https://drive.google.com/file/d/1NM8zJpS9eqiUO5ElYLihxReyZ0zvfsRk/view?usp=drive_link"
 
-    st.altair_chart(chart, use_container_width=True)
+    st.image(chart_image_url, use_container_width=True)
+
+    st.markdown(f"# {title}")
+    st.write(f"This is a placeholder chart image for {title}.")
     st.button("Re-run")
 
 # Page: Average Salary by Borough
