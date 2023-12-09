@@ -15,6 +15,7 @@ def load_data(file_path):
     return pd.DataFrame(data)
 
 # Function to visualize the data for the "Borough-based Insights" scenario
+# Function to visualize the data for the "Borough-based Insights" scenario
 def plotting_demo(data, title):
     if data.empty:
         st.warning(f"No data available for {title}")
@@ -25,6 +26,12 @@ def plotting_demo(data, title):
     st.markdown(f"# {title}")
     st.write(f"This bar chart shows the number of employees for selected work location boroughs.")
     st.button("Re-run")
+
+# # Page 8: Borough-based Insights
+# st.set_page_config(page_title="Borough-based Insights", page_icon="🏙️")
+# st.markdown("# Borough-based Insights")
+# st.sidebar.header("Borough-based Insights")
+# plotting_demo
 
 # Page 8: Borough-based Insights
 st.set_page_config(page_title="Borough-based Insights", page_icon="🏙️")
