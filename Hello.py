@@ -10,7 +10,7 @@ def run():
         page_icon="👋",
     )
 
-    st.write("# New York City Municipal Employee Pay Data Analysis 👋")
+    st.write("# New York City Municipal Employee Pay Data Analysis ")
 
     st.sidebar.success("Select a demo above.")
 
